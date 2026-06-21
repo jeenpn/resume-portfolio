@@ -1,0 +1,498 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  orphans: 2; /* Minimum 2 lines at bottom of page */
+  widows: 2; /* Minimum 2 lines at top of page */
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5; /* Increased for better readability */
+  color: #333;
+  font-size: 14px; /* Increased base font size */
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  hyphenate: none; /* No hyphenation */
+  hyphenate-limit-chars: 6 3 2; /* Control hyphenation */
+  adobe-hyphenate: none;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Resume container */
+.resume-container {
+  display: flex;
+  max-width: 210mm;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Left sidebar */
+.sidebar {
+  width: 35%;
+  background-color: #f8f9fa;
+  padding: 18px 15px;
+  border-right: 1px solid #e0e0e0;
+  font-size: 12.5px; /* Original size maintained */
+  line-height: 1.4; /* Original line height */
+}
+
+/* Main content - INCREASED FONT SIZE */
+.main-content {
+  width: 65%;
+  padding: 18px 22px;
+  font-size: 14.5px; /* Increased from 13.5px */
+  line-height: 1.5; /* Better readability */
+}
+
+/* Full width content for pages 2+ - INCREASED FONT SIZE */
+.full-width {
+  width: 100%;
+  padding: 18px 22px;
+  font-size: 14.5px; /* Increased from 13.5px */
+  line-height: 1.5; /* Better readability */
+}
+
+/* Profile photo */
+.profile-pic {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 15px;
+  display: block;
+  border: 2px solid #2c3e50;
+}
+
+/* Name and title */
+h1 {
+  font-size: 20px;
+  color: #2c3e50;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+.title {
+  font-size: 16px;
+  color: #7f8c8d;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Section styling */
+section {
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-size: 20px; /* Slightly increased */
+  color: #2c3e50;
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #3498db;
+  page-break-after: avoid; /* Keep with next content */
+  break-after: avoid;
+}
+
+/* Phase headings */
+h4 {
+  font-size: 15px;
+  color: #1f4fd8;
+  margin: 18px 0 10px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  border-left: 4px solid #1f4fd8;
+  padding-left: 8px;
+  text-transform: uppercase;
+
+  /* --- ORPHAN PREVENTION --- */
+  page-break-after: avoid; /* keep heading with next content */
+  break-after: avoid;
+  page-break-inside: avoid;
+}
+
+/* Contact info */
+.contact p {
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.contact a {
+  color: #3498db;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+/* Lists */
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul li {
+  margin-bottom: 4px; /* Slightly increased */
+  padding-left: 12px;
+  position: relative;
+  line-height: 1.4; /* Better line height */
+  font-size: 13px; /* Increased from 12.5px */
+}
+
+ul li:before {
+  content: "•";
+  color: #1f4fd8;
+  position: absolute;
+  left: 0;
+  font-size: 12px;
+}
+
+/* Job experience - WITH ADVANCED PAGE BREAK CONTROLS */
+.job {
+  margin-bottom: 22px; /* Slightly increased */
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #e5e7eb;
+  page-break-inside: avoid; /* KEEP LINES TOGETHER - Entire job stays together */
+  break-inside: avoid;
+  page-break-before: auto;
+}
+
+/* WINDOW/ORPHAN CONTROL - Prevent single lines at top/bottom */
+.job h3,
+.job .meta,
+.job .domain {
+  page-break-after: avoid;
+  break-after: avoid;
+}
+.job:last-of-type {
+  border-bottom: none;
+}
+
+.job ul {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.job h3 {
+  font-size: 15px; /* Increased from 14px */
+  color: #2c3e50;
+  margin-bottom: 3px;
+  line-height: 1.3;
+  page-break-after: avoid; /* KEEP WITH NEXT - Keep title with first bullet */
+  break-after: avoid;
+}
+
+.meta {
+  font-style: italic;
+  color: #6b7280;
+  margin-bottom: 5px;
+  font-size: 13px; /* Increased from 12.5px */
+  page-break-after: avoid; /* KEEP WITH NEXT */
+  break-after: avoid;
+}
+
+.domain,
+.company {
+  margin-bottom: 5px;
+  font-size: 13px; /* Increased from 12.5px */
+  page-break-after: avoid; /* KEEP WITH NEXT */
+  break-after: avoid;
+}
+
+.job ul {
+  margin-top: 5px;
+}
+
+.job ul li {
+  margin-bottom: 4px; /* Slightly increased */
+  font-size: 13px; /* Increased from 12.5px */
+}
+
+/* Education section */
+.education p {
+  margin-bottom: 3px;
+  font-size: 12.5px; /* Left pane - original size */
+}
+
+/* AI Tools section */
+.ai-tools {
+  background: #f0f8ff;
+  padding: 10px;
+  border-radius: 4px;
+  border-left: 3px solid #3498db;
+  margin: 12px 0;
+  font-size: 13px; /* Increased from 12.5px */
+  page-break-inside: avoid; /* Keep AI tools section together */
+  break-inside: avoid;
+}
+
+.ai-tools h3 {
+  color: #2c3e50;
+  margin-bottom: 6px;
+  font-size: 14px; /* Increased from 13px */
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+.ai-tools ul {
+  margin-bottom: 0;
+}
+
+/* Page-specific headers */
+.page2-header,
+.page3-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  text-align: right;
+  padding: 8mm 12mm 0 0;
+  font-size: 12px;
+  color: #2c3e50;
+  font-weight: bold;
+  z-index: 1000;
+  display: none;
+}
+
+/* Compact sections */
+.compact {
+  margin-bottom: 15px;
+}
+
+.compact p {
+  font-size: 13.5px; /* Increased from 12.5px */
+  line-height: 1.5; /* Better readability */
+}
+
+/* FORMATTING EXCEPTIONS - Allow breaking only when necessary */
+.job.allow-break {
+  page-break-inside: auto; /* Allow breaking if absolutely necessary */
+  break-inside: auto;
+}
+
+/* PAGE BREAK BEFORE - Force specific elements to new pages */
+.force-new-page {
+  page-break-before: always;
+  break-before: page;
+}
+
+/* Enhanced section grouping */
+.section-group {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+/* Page setup for printing */
+@media print {
+  @page {
+    size: A4;
+    margin: 15mm 12mm 15mm 12mm;
+    orphans: 3; /* Minimum 3 lines at bottom */
+    widows: 3; /* Minimum 3 lines at top */
+  }
+
+  @page :first {
+    margin-top: 10mm; /* No header on first page */
+  }
+
+  body {
+    font-size: 14px;
+    line-height: 1.5;
+    background: white;
+    margin: 0;
+    padding: 0;
+    hyphenate: none;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  .resume-container {
+    max-width: 100%;
+    margin: 0;
+    min-height: 0;
+    position: relative;
+  }
+
+  /* Hide sidebar after first page */
+  .sidebar {
+    width: 35%;
+    font-size: 12.5px; /* Original size maintained */
+    line-height: 1.4; /* Original line height */
+  }
+
+  .sidebar ~ .sidebar {
+    display: none;
+  }
+
+  /* Main content on first page - INCREASED */
+  .main-content {
+    width: 65%;
+    font-size: 14.5px; /* Increased */
+    line-height: 1.5;
+  }
+
+  /* Full width for subsequent pages - INCREASED */
+  .full-width {
+    width: 100%;
+    font-size: 14.5px; /* Increased */
+    line-height: 1.5;
+  }
+
+  .full-width {
+    background: linear-gradient(to bottom, #ffffff 0%, #f9fbff 100%);
+  }
+
+  /* Page breaks */
+  .page-break {
+    page-break-before: always;
+    break-before: page;
+  }
+
+  /* MANUAL HEADERS - Show on specific pages */
+  .page2-header,
+  .page3-header {
+    display: block !important;
+    position: running(header);
+  }
+
+  /* Enhanced page break controls for print */
+  .job {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .job h3 {
+    page-break-after: avoid;
+    break-after: avoid;
+    font-size: 15px; /* keep size */
+    color: #0b3c5d; /* dark blue-gray for visual hierarchy */
+    font-weight: 600;
+    margin-bottom: 3px;
+    line-height: 1.3;
+    position: relative;
+  }
+
+  .job h3::after {
+    content: "";
+    display: block;
+    width: 36px;
+    height: 2px;
+    background-color: #3498db;
+    margin-top: 3px;
+  }
+
+  .job ul {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Allow breaking only when absolutely necessary */
+  .job.allow-break {
+    page-break-inside: auto;
+    break-inside: auto;
+  }
+
+  /* Adjust spacing for print */
+  section {
+    margin-bottom: 15px;
+  }
+
+  .ai-tools {
+    background: #f0f8ff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Better page filling */
+  .page-fill {
+    min-height: 200mm;
+  }
+
+  /* Force page 1 to fill height */
+  .resume-container:first-of-type {
+  }
+}
+
+/* For screen display */
+@media screen {
+  body {
+    background-color: #f9f9f9;
+    padding: 15px;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  .resume-container {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    margin-bottom: 20px;
+  }
+
+  .page2-header,
+  .page3-header {
+    display: none; /* Hide headers on screen */
+  }
+
+  /* Show headers for preview */
+  .page2-header::before,
+  .page3-header::before {
+    content: "Header: Resume of Jeen P N (Will appear in print)";
+    display: block;
+    background: #f0f0f0;
+    padding: 5px;
+    text-align: center;
+    font-size: 11px;
+    color: #666;
+    border-bottom: 1px solid #ddd;
+  }
+}
+
+/* Page numbers and footer for pages 2+ */
+@media print {
+  @page {
+    margin: 15mm 12mm 15mm 12mm;
+  }
+
+  @page :first {
+    @bottom-left {
+      content: none;
+    }
+    @bottom-right {
+      content: none;
+    }
+    @bottom-center {
+      content: none;
+    }
+  }
+
+  @page {
+    @bottom-left {
+      content: "Resume | Jeen P N";
+      font-size: 10px;
+      color: #666;
+      margin-left: 12mm; /* Push right to align with content */
+      margin-bottom: 2mm; /* Small bottom spacing */
+    }
+    @bottom-right {
+      content: counter(page) " of " counter(pages);
+      font-size: 10px;
+      color: #666;
+      margin-right: 12mm; /* Push left to align with content */
+      margin-bottom: 2mm; /* Small bottom spacing */
+    }
+  }
+
+  /* Ensure page counter works properly */
+  body {
+    counter-reset: page;
+  }
+}
